@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+ <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Two-Column Resume</title>
+  <style>
+    
+    body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; 
+  align-items: center;    
+  min-height: 100vh;      
+  background-color: #f4f4f4; 
+  }
+
+  .container {
+  width: 80%;           
+  max-width: 800px;      
+  background: #fff;      
+  padding: 20px;        
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  border-radius: 8px;    
+}
+
+    .resume {
+      max-width: 800px;
+      margin: 30px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      padding: 30px;
+      display: flex;
+    }
+    .left-column {
+      width: 35%;
+      padding-right: 20px;
+      border-right: 2px solid #ddd;
+    }
+    .right-column {
+      width: 65%;
+      padding-left: 20px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    header h1 {
+      font-size: 2rem;
+      margin: 0;
+    }
+    header p {
+      font-size: 0.9rem;
+      color: #555;
+    }
+    .section h2 {
+      font-size: 1.2rem;
+      color: #007bff;
+      margin-bottom: 10px;
+    }
+    .section p, .section ul li {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: #333;
+    }
+    .section h2 {
+    font-size: 1.2rem;
+    color: #007bff; 
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #007bff; 
+    }
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.8rem;
+      color: #555;
+    }
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="resume-container">
+  <div class="resume">
+    <!-- Left Column -->
+    <div class="left-column">
+      <header>
+        <h1 id="name">Tanya Sharma</h1>
+        <p id="contact">Flat No. 302, Sunrise Apartments, Sector 15, Gurgaon, Haryana 122001, India <br>+91 9876543210<br> tanya.sharma@example.com</p>
+        <p id="website">www.interestingsite.com</p>
+      </header>
+
+      <div class="section" id="skills">
+        <h2>Skills</h2>
+        <ul>
+          <li>Communication</li>
+          <li>Problem-solving</li>
+          <li>Critical thinking</li>
+          <li>Time management</li>
+          <li>Lesson planning</li>
+          <li>Leadership</li>
+          <li>Creative writing</li>
+        </ul>
+      </div>
+
+      <div class="section" id="education">
+        <h2>Education</h2>
+        <p><strong>Bachelor’s Degree in Elementary Education</strong> <br>
+           Bellows College, Santa Fe, NM<br>
+           Aug 2011 – May 2015</p>
+
+        <p><strong>High School Diploma</strong> <br>
+           Santa Fe High School, Santa Fe, NM<br>
+           Graduated: May 2011</p>
+      </div>
+
+      <div class="section" id="achievements">
+        <h2>Achievements</h2>
+        <ul>
+          <li>Awarded "Teacher of the Year" at Balsam Elementary School (2021).</li>
+          <li>Implemented a literacy program, improving reading scores by 20%.</li>
+          <li>Organized an annual science fair with 200+ participants.</li>
+          <li>Recognized for excellence during college teaching assignments.</li>
+          
+        </ul>
+      </div>
+      
+    </div>
+
+   
+    <div class="right-column">
+      <div class="section" id="objective">
+        <h2>Objective</h2>
+        <p>My primary objective is to provide a safe and nurturing learning environment that encourages student growth and development...</p>
+      </div>
+
+      <div class="section" id="experience">
+        <h2>Experience</h2>
+        <p><strong>Teacher</strong> • Balsam Elementary School • Santa Fe, NM<br>
+           Jan 2018 – Aug 2023<br>
+           Designed and implemented engaging lesson plans aligned with state standards, 
+           resulting in a 15% increase in student test scores.<br>
+           Mentored new teachers, leading to a smoother onboarding process and increased retention rates.<br>
+           Led after-school programs, including a robotics club and art workshops, fostering student creativity and teamwork.</p>
+      
+        <p><strong>Teacher’s Aide</strong> • Balsam Elementary School • Santa Fe, NM<br>
+           Oct 2015 – May 2017<br>
+           Assisted lead teachers in classroom management and lesson preparation, improving daily operations.<br>
+           Provided one-on-one tutoring for students needing extra support, improving their academic performance.<br>
+           Organized and maintained classroom materials, ensuring a clean and conducive learning environment.</p>
+      </div>
+      
+      <div class="section" id="communication">
+        <h2>Communication</h2>
+        <p>Regularly held parent-teacher conferences, effectively addressing student progress and concerns.<br>
+           Developed weekly newsletters for parents to keep them informed about classroom activities and important updates.
+          </p>
+      </div>
+      
+      <div class="section" id="leadership">
+        <h2>Leadership</h2>
+        <p>Established a peer mentoring program that paired experienced students with new students to ease transitions.<br>
+           Chaired the school's curriculum committee, leading the implementation of new teaching strategies and technologies</p>
+      </div>
+      
+      <div class="section" id="references">
+        <h2>References</h2>
+        <p>Available upon request.<br>
+           <strong>Sample Reference 1:</strong> Dr. Emily Carter, Principal, Balsam Elementary School, (555) 123-4567, ecarter@balsamelem.edu.<br>
+           <strong>Sample Reference 2:</strong> John Doe, District Supervisor, Santa Fe Public Schools, (555) 987-6543, jdoe@sfps.edu.</p>
+      </div>
+     
+    </div>
+    
+  </div>
+  <button onclick="downloadResume()">Download PDF</button>
+</div>
+  <script src="script.js"></script>
+</body>
+</html>
